@@ -14,10 +14,13 @@ public class Cell {
 
   public void nextGeneration(int neighbours) {
 
-    if(neighbours < 2 || neighbours > 3){
+    if (neighbours < 2 || neighbours > 3){
       alive = false;
     }
 
+    if (neighbours == 3 && isAlive() == false){
+      alive = true;
+    }
 
   }
 }
