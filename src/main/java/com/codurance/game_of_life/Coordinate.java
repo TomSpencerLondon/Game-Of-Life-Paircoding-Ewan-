@@ -17,7 +17,8 @@ public class Coordinate {
     return y;
   }
 
-  public boolean isNextTo(Coordinate coordinate1) {
-    return true;
+  public boolean isNextTo(Coordinate comparisonCoordinate) {
+    return (Math.abs(x - comparisonCoordinate.getX()) == 1 ||
+            Math.abs(y - comparisonCoordinate.getY()) == 1);
   }
 }
