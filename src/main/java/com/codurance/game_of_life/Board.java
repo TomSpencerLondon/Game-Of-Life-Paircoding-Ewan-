@@ -11,4 +11,8 @@ public class Board {
   public int[][] cells() {
     return cells;
   }
+
+  public Object getCell(int i, int i1) {
+    throw new UnsupportedOperationException();
+  }
 }
