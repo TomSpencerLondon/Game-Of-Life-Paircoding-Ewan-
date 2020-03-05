@@ -6,10 +6,6 @@ public class Cell {
   private int x;
   private int y;
 
-  public Cell(boolean alive) {
-    this.alive = alive;
-  }
-
   public Cell(boolean alive, int x, int y) {
     this.alive = alive;
     this.x = x;
