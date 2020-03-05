@@ -17,23 +17,30 @@ public class GameOfLife {
     int livingNeighbours = getNeighbours(1, 1);
     int[][] nextArray = board.getBoard();
 
-    if (nextArray[1][1] == 0 && livingNeighbours == 3) {
-      nextArray[1][1] = 1;
-    }
-    if (livingNeighbours < 2) {
-      nextArray[1][1] = 0;
-    }
-    if (livingNeighbours > 3){
-      nextArray[1][1] = 0;
-    }
+    nextArray[1][1] = nextArray[1][1] == 1 ? tickLivingCell(livingNeighbours) : tickDeadCell(livingNeighbours);
+
     return nextArray;
   }
 
+  private int tickDeadCell(int livingNeighbours) {
+    return livingNeighbours == 3 ? 1 : 0;
+  }
+
+  private int tickLivingCell(int livingNeighbours) {
+    return livingNeighbours >= 2 && livingNeighbours <= 3 ? 1 : 0;
+  }
+
   private int getNeighbours(int x, int y) {
-    return board.getBoard()[x][y - 1] +
-            board.getBoard()[x][y + 1] +
-            board.getBoard()[x + 1][y] +
-            board.getBoard()[x - 1][y];
+    int neighbours = 0;
+    for (int i = x - 1; i <= x + 1; i++) {
+      for (int j = y - 1; j <= y + 1; j++) {
+        if (i == x && j == y){
+          continue;
+        }
+        neighbours += board.getBoard()[i][j];
+      }
+    }
+    return neighbours;
   }
 }
 

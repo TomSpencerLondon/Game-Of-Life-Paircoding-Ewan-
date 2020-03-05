@@ -73,4 +73,15 @@ public class GameOfLifeShould {
 
     assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
   }
+
+  @Test
+  public void dead_cell_with_exactly_three_diagonal_live_neighbours_lives() {
+
+    int[][] array = {{1, 0, 1},{0, 0, 0},{1, 0, 0}};
+    Board start = new Board(array);
+
+    GameOfLife gameOfLife = new GameOfLife();
+
+    assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
+  }
 }
