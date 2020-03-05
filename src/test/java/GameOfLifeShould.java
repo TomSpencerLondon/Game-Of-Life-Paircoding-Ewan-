@@ -51,4 +51,15 @@ public class GameOfLifeShould {
 
     assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
   }
+
+  @Test
+  public void live_cell_with_more_than_three_live_neighbours_dies() {
+
+    int[][] array = {{0, 1, 0},{1, 1, 1},{0, 1, 0}};
+    Board start = new Board(array);
+
+    GameOfLife gameOfLife = new GameOfLife();
+
+    assertEquals(0, gameOfLife.nextGen(start).getBoard()[1][1]);
+  }
 }
