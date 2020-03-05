@@ -32,7 +32,7 @@ public class CellShould {
   void next_generation_alive_less_than_2_dies() {
     Cell cell = new Cell(true, coordinate);
 
-    cell.nextGeneration(1);
+    cell.tick(1);
     assertEquals(false, cell.isAlive());
   }
 
@@ -40,7 +40,7 @@ public class CellShould {
   void next_generation_alive_more_than_3_dies() {
     Cell cell = new Cell(true, coordinate);
 
-    cell.nextGeneration(4);
+    cell.tick(4);
     assertEquals(false, cell.isAlive());
   }
 
@@ -48,7 +48,7 @@ public class CellShould {
   void next_generation_dead_exactly_3_lives() {
     Cell cell = new Cell(false, coordinate);
 
-    cell.nextGeneration(3);
+    cell.tick(3);
     assertEquals(true, cell.isAlive());
   }
 

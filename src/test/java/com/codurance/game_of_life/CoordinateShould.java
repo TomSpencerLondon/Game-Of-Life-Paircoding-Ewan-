@@ -37,4 +37,12 @@ public class CoordinateShould {
 
     assertTrue(coordinate.isNextTo(coordinate1));
   }
+
+  @Test
+  void return_false_if_not_adjacent_but_one_axis_is_adjacent() {
+    Coordinate coordinate = new Coordinate(0, 0);
+    Coordinate coordinate1 = new Coordinate(1, 2);
+
+    assertFalse(coordinate.isNextTo(coordinate1));
+  }
 }

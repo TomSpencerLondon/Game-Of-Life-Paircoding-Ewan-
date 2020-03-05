@@ -47,6 +47,6 @@ public class BoardShould {
     Board board = new Board(cell1, cell2, cell3);
     board.nextGeneration();
 
-    verify(cell1).nextGeneration(2);
+    verify(cell1).tick(2);
   }
 }

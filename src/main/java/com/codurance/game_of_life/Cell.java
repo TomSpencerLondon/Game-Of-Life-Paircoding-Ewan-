@@ -14,8 +14,7 @@ public class Cell {
     return alive;
   }
 
-  public void nextGeneration(int neighbours) {
-
+  public void tick(int neighbours) {
     if (neighbours < 2 || neighbours > 3){
       alive = false;
     }

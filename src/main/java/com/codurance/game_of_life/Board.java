@@ -15,7 +15,7 @@ public class Board {
   }
 
   public Board nextGeneration() {
-    cells.get(0).nextGeneration(neighbourCount());
+    cells.get(0).tick(neighbourCount());
     return this;
   }
 
