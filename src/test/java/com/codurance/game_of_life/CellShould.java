@@ -4,7 +4,7 @@ package com.codurance.game_of_life;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellShould {
   private Coordinate coordinate;
@@ -18,14 +18,14 @@ public class CellShould {
   void is_alive() {
     Cell cell = new Cell(true, coordinate);
 
-    assertEquals(true, cell.isAlive());
+    assertTrue(cell.isAlive());
   }
 
   @Test
   void is_dead() {
     Cell cell = new Cell(false, coordinate);
 
-    assertEquals(false, cell.isAlive());
+    assertFalse(cell.isAlive());
   }
 
   @Test
@@ -33,7 +33,7 @@ public class CellShould {
     Cell cell = new Cell(true, coordinate);
 
     cell.tick(1);
-    assertEquals(false, cell.isAlive());
+    assertFalse(cell.isAlive());
   }
 
   @Test
@@ -41,7 +41,7 @@ public class CellShould {
     Cell cell = new Cell(true, coordinate);
 
     cell.tick(4);
-    assertEquals(false, cell.isAlive());
+    assertFalse(cell.isAlive());
   }
 
   @Test
@@ -49,7 +49,7 @@ public class CellShould {
     Cell cell = new Cell(false, coordinate);
 
     cell.tick(3);
-    assertEquals(true, cell.isAlive());
+    assertTrue(cell.isAlive());
   }
 
   @Test
@@ -58,7 +58,7 @@ public class CellShould {
     Cell cell = new Cell(false, coordinate);
     Cell neighbour = new Cell(false, coordinate2);
 
-    assertEquals(true, cell.isNeighbour(neighbour));
+    assertTrue(cell.isNeighbour(neighbour));
   }
 
   @Test
