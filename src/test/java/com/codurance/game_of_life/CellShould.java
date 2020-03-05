@@ -35,4 +35,12 @@ public class CellShould {
     cell.nextGeneration(4);
     assertEquals(false, cell.isAlive());
   }
+
+  @Test
+  void next_generation_dead_exactly_3_lives() {
+    Cell cell = new Cell(false);
+
+    cell.nextGeneration(3);
+    assertEquals(true, cell.isAlive());
+  }
 }

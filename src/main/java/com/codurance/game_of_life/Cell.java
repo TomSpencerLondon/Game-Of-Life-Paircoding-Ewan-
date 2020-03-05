@@ -17,5 +17,7 @@ public class Cell {
     if(neighbours < 2 || neighbours > 3){
       alive = false;
     }
+
+
   }
 }
