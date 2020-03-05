@@ -31,7 +31,7 @@ public class BoardShould {
   void contain_a_dead_cell_if_it_has_no_neighbours() {
     Cell cell = new Cell(true, coordinate);
     Board board = new Board(cell);
-    Board nextBoard = board.nextGeneration();
+    board.nextGeneration();
     assertEquals(false, cell.isAlive());
   }
 
