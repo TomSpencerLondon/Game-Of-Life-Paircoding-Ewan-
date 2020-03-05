@@ -6,14 +6,16 @@ public class GameOfLife {
 
   private Board board;
 
-  public Board nextGen(Board board) {
+  public GameOfLife(Board board) {
     this.board = board;
+  }
 
-    int[][] nextGenArray = nextArray(board);
+  public Board nextGen() {
+    int[][] nextGenArray = nextArray();
     return new Board(nextGenArray);
   }
 
-  private int[][] nextArray(Board board){
+  private int[][] nextArray(){
     int livingNeighbours = getNeighbours(1, 1);
     int[][] nextArray = board.getBoard();
 

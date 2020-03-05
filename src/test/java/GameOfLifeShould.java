@@ -12,9 +12,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 0, 0},{0, 1, 0},{0, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(0, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -23,9 +23,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 0, 0},{0, 1, 1},{0, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(0, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -35,9 +35,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 0, 0},{1, 1, 1},{0, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -47,9 +47,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 1, 0},{1, 1, 1},{0, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -58,9 +58,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 1, 0},{1, 1, 1},{0, 1, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(0, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -69,9 +69,9 @@ public class GameOfLifeShould {
     int[][] array = {{0, 1, 0},{1, 0, 1},{0, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
   }
 
   @Test
@@ -80,8 +80,8 @@ public class GameOfLifeShould {
     int[][] array = {{1, 0, 1},{0, 0, 0},{1, 0, 0}};
     Board start = new Board(array);
 
-    GameOfLife gameOfLife = new GameOfLife();
+    GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen(start).getBoard()[1][1]);
+    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
   }
 }
