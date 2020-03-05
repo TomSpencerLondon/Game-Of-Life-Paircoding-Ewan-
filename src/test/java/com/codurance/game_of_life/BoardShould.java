@@ -7,12 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BoardShould {
-  private Board board;
-//  @BeforeEach
-//  void setUp() {
-//    board = new Board(cell);
-//  }
-
   @Test
   void store_a_collection_of_cells_on_initialisation() {
     Cell cell = new Cell(true);
