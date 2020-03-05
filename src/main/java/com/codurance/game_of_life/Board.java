@@ -1,12 +1,13 @@
 package com.codurance.game_of_life;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class Board {
 
   private final HashMap<String, Cell> cells;
 
-  public Board() {
+  public Board(Cell cell) {
     this.cells = new HashMap();
   }
 
@@ -16,5 +17,9 @@ public class Board {
 
   public void addCell(Cell cell) {
     cells.put("1:1", cell);
+  }
+
+  public List<Object> getCells() {
+    throw new UnsupportedOperationException();
   }
 }
