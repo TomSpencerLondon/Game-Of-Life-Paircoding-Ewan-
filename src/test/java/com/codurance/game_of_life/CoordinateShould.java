@@ -29,4 +29,12 @@ public class CoordinateShould {
 
     assertFalse(coordinate.isNextTo(coordinate1));
   }
+
+  @Test
+  void return_true_if_coordinate_diagonally_adjacent() {
+    Coordinate coordinate = new Coordinate(1, 1);
+    Coordinate coordinate1 = new Coordinate(2, 2);
+
+    assertFalse(coordinate.isNextTo(coordinate1));
+  }
 }
