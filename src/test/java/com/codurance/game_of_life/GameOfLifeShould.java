@@ -1,5 +1,7 @@
-import Board.Board;
-import GameOfLife.GameOfLife;
+package com.codurance.game_of_life;
+
+import com.codurance.game_of_life.Board;
+import com.codurance.game_of_life.GameOfLife;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

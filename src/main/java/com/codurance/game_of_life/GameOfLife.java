@@ -1,6 +1,4 @@
-package GameOfLife;
-
-import Board.Board;
+package com.codurance.game_of_life;
 
 public class GameOfLife {
 
@@ -13,11 +11,20 @@ public class GameOfLife {
   public Board nextGen() {
     int[][] nextGenArray = nextArray();
     return board = new Board(nextGenArray);
+
+//    return board = nextBoard();
   }
 
+//  private Board nextBoard() {
+//    Board nextBoard = board.createClone();
+//    return nextBoard.
+//    int nextCellState = nextBoard.getCellState(1,1) == 1 ? tickLivingCell(livingNeighbours) : tickDeadCell(livingNeighbours);
+//    nextCellState == 1 ? nextBoard.cellAlive(1,1) : nextBoard.cellDead(1,1);
+//  }
+
   private int[][] nextArray(){
-    int livingNeighbours = getNeighbours(1, 1);
     int[][] nextArray = board.getBoard();
+    int livingNeighbours = getNeighbours(1, 1);
 
     nextArray[1][1] = board.getCellState(1,1) == 1 ? tickLivingCell(livingNeighbours) : tickDeadCell(livingNeighbours);
 

@@ -1,4 +1,4 @@
-package Board;
+package com.codurance.game_of_life;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
@@ -15,6 +15,10 @@ public class Board {
 
   public int getCellState(int row, int column){
     return board[row][column];
+  }
+
+  public Board createClone() {
+    return new Board(board);
   }
 
   @Override
