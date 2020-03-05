@@ -35,6 +35,6 @@ public class CoordinateShould {
     Coordinate coordinate = new Coordinate(1, 1);
     Coordinate coordinate1 = new Coordinate(2, 2);
 
-    assertFalse(coordinate.isNextTo(coordinate1));
+    assertTrue(coordinate.isNextTo(coordinate1));
   }
 }
