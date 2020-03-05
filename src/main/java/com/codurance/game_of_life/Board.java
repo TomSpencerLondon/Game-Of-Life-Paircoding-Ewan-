@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Board {
 
-  private List cells;
+  private List<Cell> cells;
 
   public Board(Cell ...cells) {
     this.cells = List.of(cells);
@@ -15,6 +15,7 @@ public class Board {
   }
 
   public Board nextGeneration() {
-    throw new UnsupportedOperationException();
+    cells.get(0).nextGeneration(0);
+    return this;
   }
 }
