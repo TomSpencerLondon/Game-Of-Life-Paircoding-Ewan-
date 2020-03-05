@@ -1,9 +1,9 @@
 package com.codurance.game_of_life;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BoardShould {
@@ -11,7 +11,8 @@ public class BoardShould {
   void store_a_collection_of_cells_on_initialisation() {
     Cell cell = new Cell(true);
     Board board = new Board(cell);
+    List<Cell> cells = board.getCells();
 
-    assertEquals(cell, board.getCells().get(0));
+    assertEquals(1, cells.size());
   }
 }

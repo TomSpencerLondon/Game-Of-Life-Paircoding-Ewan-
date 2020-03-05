@@ -6,11 +6,11 @@ public class Board {
 
   private List cells;
 
-  public Board(Cell cell) {
-    this.cells = List.of(cell);
+  public Board(Cell ...cells) {
+    this.cells = List.of(cells);
   }
 
-  public List<Object> getCells() {
+  public List<Cell> getCells() {
     return cells;
   }
 }

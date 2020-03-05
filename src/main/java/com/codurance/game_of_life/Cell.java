@@ -8,6 +8,10 @@ public class Cell {
     this.alive = alive;
   }
 
+  public Cell(boolean b, int i, int i1) {
+
+  }
+
   public boolean isAlive() {
     return alive;
   }
@@ -22,5 +26,9 @@ public class Cell {
       alive = true;
     }
 
+  }
+
+  public boolean isNeighbour(Cell neighbour) {
+    throw new UnsupportedOperationException();
   }
 }

@@ -43,4 +43,12 @@ public class CellShould {
     cell.nextGeneration(3);
     assertEquals(true, cell.isAlive());
   }
+
+  @Test
+  void cell_should_say_whether_another_cell_is_neighbour() {
+    Cell cell = new Cell(false, 0, 0);
+    Cell neighbour = new Cell(false, 0, 1);
+
+    assertEquals(true, cell.isNeighbour(neighbour));
+  }
 }
