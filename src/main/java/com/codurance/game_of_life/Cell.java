@@ -3,13 +3,17 @@ package com.codurance.game_of_life;
 public class Cell {
 
   private boolean alive;
+  private int x;
+  private int y;
 
   public Cell(boolean alive) {
     this.alive = alive;
   }
 
-  public Cell(boolean b, int i, int i1) {
-
+  public Cell(boolean alive, int x, int y) {
+    this.alive = alive;
+    this.x = x;
+    this.y = y;
   }
 
   public boolean isAlive() {
@@ -29,6 +33,15 @@ public class Cell {
   }
 
   public boolean isNeighbour(Cell neighbour) {
-    throw new UnsupportedOperationException();
+    return (Math.abs(x - neighbour.getX()) == 1 ||
+            Math.abs(y - neighbour.getY()) == 1);
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
   }
 }
