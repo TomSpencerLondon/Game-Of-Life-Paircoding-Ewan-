@@ -15,4 +15,8 @@ public class Board {
   public Object getCell(int i, int i1) {
     throw new UnsupportedOperationException();
   }
+
+  public void addCell(Cell cell) {
+    throw new UnsupportedOperationException();
+  }
 }

@@ -11,9 +11,8 @@ public class BoardShould {
   @Test
   void have_array_of_empty_cells() {
     Board board = new Board();
-    HashMap cells = new HashMap();
     Cell cell = new Cell(true);
-    cells.put("1:1", cell);
+    board.addCell(cell);
 
     assertEquals(cell, board.getCell(1, 1));
   }
