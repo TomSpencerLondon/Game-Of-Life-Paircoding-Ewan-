@@ -1,7 +1,5 @@
 package com.codurance.game_of_life;
 
-import java.util.Objects;
-
 public class Coordinate {
   private int x;
   private int y;
