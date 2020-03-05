@@ -2,7 +2,6 @@ import Board.Board;
 import GameOfLife.GameOfLife;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameOfLifeShould {
@@ -13,8 +12,8 @@ public class GameOfLifeShould {
     Board start = new Board(array);
 
     GameOfLife gameOfLife = new GameOfLife(start);
-
-    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(0, board.getCellState(1, 1));
   }
 
   @Test
@@ -24,8 +23,8 @@ public class GameOfLifeShould {
     Board start = new Board(array);
 
     GameOfLife gameOfLife = new GameOfLife(start);
-
-    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(0, board.getCellState(1, 1));
   }
 
   @Test
@@ -36,8 +35,8 @@ public class GameOfLifeShould {
     Board start = new Board(array);
 
     GameOfLife gameOfLife = new GameOfLife(start);
-
-    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(1, board.getCellState(1, 1));
   }
 
   @Test
@@ -48,8 +47,8 @@ public class GameOfLifeShould {
     Board start = new Board(array);
 
     GameOfLife gameOfLife = new GameOfLife(start);
-
-    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(1, board.getCellState(1, 1));
   }
 
   @Test
@@ -60,7 +59,8 @@ public class GameOfLifeShould {
 
     GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(0, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(0, board.getCellState(1, 1));
   }
 
   @Test
@@ -71,7 +71,8 @@ public class GameOfLifeShould {
 
     GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
+    Board board = gameOfLife.nextGen();
+    assertEquals(1, board.getCellState(1, 1));
   }
 
   @Test
@@ -82,6 +83,9 @@ public class GameOfLifeShould {
 
     GameOfLife gameOfLife = new GameOfLife(start);
 
-    assertEquals(1, gameOfLife.nextGen().getBoard()[1][1]);
+
+    Board board = gameOfLife.nextGen();
+
+    assertEquals(1, board.getCellState(1, 1));
   }
 }
