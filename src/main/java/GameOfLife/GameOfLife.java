@@ -39,7 +39,7 @@ public class GameOfLife {
         if (i == x && j == y){
           continue;
         }
-        neighbours += board.getBoard()[i][j];
+        neighbours += board.getCellState(i, j);
       }
     }
     return neighbours;

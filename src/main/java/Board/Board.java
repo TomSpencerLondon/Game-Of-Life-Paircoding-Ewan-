@@ -1,7 +1,6 @@
 package Board;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Board {
   private final int[][] board;
@@ -14,7 +13,9 @@ public class Board {
     return board;
   }
 
-
+  public int getCellState(int row, int column){
+    return board[row][column];
+  }
 
   @Override
   public boolean equals(Object o) {
