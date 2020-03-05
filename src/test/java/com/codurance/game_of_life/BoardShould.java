@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +32,10 @@ public class BoardShould {
     Cell cell1 = mock(Cell.class);
     Cell cell2 = mock(Cell.class);
     Cell cell3 = mock(Cell.class);
+    given(cell1.isNeighbour(cell2)).willReturn(true);
+    given(cell1.isNeighbour(cell3)).willReturn(true);
     Board board = new Board(cell1, cell2, cell3);
+    board.nextGeneration();
     verify(cell1).nextGeneration(2);
   }
 }

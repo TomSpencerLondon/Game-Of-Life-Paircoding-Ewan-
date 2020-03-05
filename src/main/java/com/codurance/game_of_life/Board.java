@@ -15,7 +15,11 @@ public class Board {
   }
 
   public Board nextGeneration() {
-    cells.get(0).nextGeneration(0);
+    cells.get(0).nextGeneration(neighbourCount());
     return this;
+  }
+
+  private int neighbourCount() {
+    return cells.size() - 1;
   }
 }
