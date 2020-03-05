@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class BoardShould {
   @Test
@@ -17,10 +19,19 @@ public class BoardShould {
   }
 
   @Test
-  void should_contain_a_dead_cell_if_it_has_no_neighbours() {
+  void contain_a_dead_cell_if_it_has_no_neighbours() {
     Cell cell = new Cell(true, 1, 1);
     Board board = new Board(cell);
     Board nextBoard = board.nextGeneration();
     assertEquals(false, cell.isAlive());
+  }
+
+  @Test
+  void pass_argument_of_2_if_two_neighbours_of_cell() {
+    Cell cell1 = mock(Cell.class);
+    Cell cell2 = mock(Cell.class);
+    Cell cell3 = mock(Cell.class);
+    Board board = new Board(cell1, cell2, cell3);
+    verify(cell1).nextGeneration(2);
   }
 }
