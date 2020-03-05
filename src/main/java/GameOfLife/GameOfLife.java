@@ -12,14 +12,14 @@ public class GameOfLife {
 
   public Board nextGen() {
     int[][] nextGenArray = nextArray();
-    return new Board(nextGenArray);
+    return board = new Board(nextGenArray);
   }
 
   private int[][] nextArray(){
     int livingNeighbours = getNeighbours(1, 1);
     int[][] nextArray = board.getBoard();
 
-    nextArray[1][1] = nextArray[1][1] == 1 ? tickLivingCell(livingNeighbours) : tickDeadCell(livingNeighbours);
+    nextArray[1][1] = board.getCellState(1,1) == 1 ? tickLivingCell(livingNeighbours) : tickDeadCell(livingNeighbours);
 
     return nextArray;
   }
