@@ -16,4 +16,8 @@ public class Coordinate {
   public int getY() {
     return y;
   }
+
+  public boolean isNextTo(Coordinate coordinate1) {
+    return true;
+  }
 }
