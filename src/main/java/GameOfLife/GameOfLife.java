@@ -17,6 +17,9 @@ public class GameOfLife {
     int livingNeighbours = getNeighbours(1, 1);
     int[][] nextArray = board.getBoard();
 
+    if (nextArray[1][1] == 0 && livingNeighbours == 3) {
+      nextArray[1][1] = 1;
+    }
     if (livingNeighbours < 2) {
       nextArray[1][1] = 0;
     }
