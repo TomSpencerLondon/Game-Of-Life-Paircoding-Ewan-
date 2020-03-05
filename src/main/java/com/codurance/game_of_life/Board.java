@@ -1,22 +1,24 @@
 package com.codurance.game_of_life;
 
+import java.util.HashMap;
+
 public class Board {
 
-  private final int[][] cells;
+  private final HashMap cells;
 
   public Board() {
-    this.cells = new int[][]{{},{},{}};
+    this.cells = new HashMap();
   }
 
-  public int[][] cells() {
-    return cells;
-  }
+//  public int[][] cells() {
+//    return cells;
+//  }
 
   public Object getCell(int i, int i1) {
-    throw new UnsupportedOperationException();
+    return cells.get("1:1");
   }
 
   public void addCell(Cell cell) {
-    throw new UnsupportedOperationException();
+    cells.put("1:1", cell);
   }
 }
