@@ -15,4 +15,12 @@ public class BoardShould {
 
     assertEquals(1, cells.size());
   }
+
+  @Test
+  void should_contain_a_dead_cell_if_it_has_no_neighbours() {
+    Cell cell = new Cell(true);
+    Board board = new Board(cell);
+    Board nextBoard = board.nextGeneration();
+    assertEquals(false, cell.isAlive());
+  }
 }
